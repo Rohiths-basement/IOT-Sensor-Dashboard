@@ -296,9 +296,24 @@ With more time, I would add:
 ## 🤖 AI Usage
 
 ### Tools Used
-- **Cascade AI**: Primary development assistant for full-stack architecture, React components, Node.js backend, database design, and UI/UX improvements
-- **React Hooks**: useState and useMemo for state management and performance optimization
-- **Recharts Library**: For interactive data visualization components
+- **Codex CLI with GPT-5 high reasoning**: Primary development assistant for full-stack architecture, React components, Node.js backend, database design, and UI/UX improvements
+- **Windsurf**: As the IDE - used mainly for quick code edits & minute changes (Driver was Claude Sonnet 4)
+
+### Helpful Prompt
+**"What you've generated is very messy with a lot of unecessary graphical clutter and typical AI generated gradients. I want you to do a complete UI/UX overhaul. It Functionally works but the UI is not clean. Do the following - Make the whole UI very minimalistic  in nature where the Data is the focus. Remove uneccessary graphical clutter. Instead of having the 3 sections stacked next to each other horizontally, could you add an "Overview" section on top and then have a detailed view of these 3 sections below it stacked horizontally. Also for the nitrgoen line graph, could you also add a filter where you can view based on the DeviceID? Again, remember, the goal of this project is to be minimalistic in terms of it's UI but functionality should be rock solid"**
+
+This prompt was particularly helpful because it:
+- I believe AI can do the first 80% of the work but it's the last 20% that's the most important which also requires a ton of QA & testing and also nudging it in the right direction. This is where "Taste" comes in and understanding what the project should lookk like and directing the AI in the right direction to complete the remaining 20% of the work is where the real value lies in. This prompt does just that. 
+
+
+### AI Fix Required
+1) The UI was ugly. It was extremely cluttered and I had to direct AI to fix it
+2) The Nitrogen Line graph did not have a filter option to filter based on DeviceID so it ended up with the graph being really cluttered.
+3) **Issue**: React Hooks Rules Violation
+- **Problem**: Initially placed `useMemo` hooks after conditional returns in NitrogenChart component
+- **Error**: "React Hook 'useMemo' is called conditionally. React Hooks must be called in the exact same order in every component render"
+- **Fix**: Moved all hooks to the top of the component before any conditional logic
+
 
 ### Key Decisions & Trade-offs
 
@@ -322,21 +337,6 @@ With more time, I would add:
 - **Trade-off**: Some data duplication but simpler queries and faster development
 - **Rationale**: Appropriate for sensor data where device info is minimal
 
-### Helpful Prompt
-**"Could you clean the data? I think some device IDs have been repeated. Also add functionality where you can pick a particular device ID and then only that device's nitrogen levels are shown in the line chart"**
-
-This prompt was particularly helpful because it:
-- Identified a real data quality issue that needed fixing
-- Requested a specific feature enhancement (device filtering)
-- Combined data cleanup with UX improvement
-- Led to implementing React hooks properly and creating a better chart interface
-
-### AI Fix Required
-**Issue**: React Hooks Rules Violation
-- **Problem**: Initially placed `useMemo` hooks after conditional returns in NitrogenChart component
-- **Error**: "React Hook 'useMemo' is called conditionally. React Hooks must be called in the exact same order in every component render"
-- **Fix**: Moved all hooks to the top of the component before any conditional logic
-- **Learning**: Reinforced the importance of React's Rules of Hooks for consistent rendering
 
 ### Architecture Decisions
 - **Vertical Layout**: Changed from horizontal to vertical sections for better information hierarchy
