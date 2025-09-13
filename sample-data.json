@@ -1,0 +1,72 @@
+[
+  {
+    "deviceId": "GH001",
+    "timestamp": "2025-09-13T10:00:00.000Z",
+    "nitrogen": 145.2,
+    "phosphorus": 42.8,
+    "ph": 6.4
+  },
+  {
+    "deviceId": "GH001",
+    "timestamp": "2025-09-13T12:00:00.000Z",
+    "nitrogen": 158.7,
+    "phosphorus": 44.1,
+    "ph": 6.6
+  },
+  {
+    "deviceId": "GH002",
+    "timestamp": "2025-09-13T10:00:00.000Z",
+    "nitrogen": 172.3,
+    "phosphorus": 38.9,
+    "ph": 6.2
+  },
+  {
+    "deviceId": "GH002",
+    "timestamp": "2025-09-13T12:00:00.000Z",
+    "nitrogen": 168.1,
+    "phosphorus": 41.2,
+    "ph": 6.4
+  },
+  {
+    "deviceId": "GH003",
+    "timestamp": "2025-09-13T10:00:00.000Z",
+    "nitrogen": 195.6,
+    "phosphorus": 51.3,
+    "ph": 6.8
+  },
+  {
+    "deviceId": "GH003",
+    "timestamp": "2025-09-13T12:00:00.000Z",
+    "nitrogen": 203.2,
+    "phosphorus": 49.7,
+    "ph": 6.7
+  },
+  {
+    "deviceId": "GH004",
+    "timestamp": "2025-09-13T10:00:00.000Z",
+    "nitrogen": 138.9,
+    "phosphorus": 36.4,
+    "ph": 6.1
+  },
+  {
+    "deviceId": "GH004",
+    "timestamp": "2025-09-13T12:00:00.000Z",
+    "nitrogen": 142.7,
+    "phosphorus": 37.8,
+    "ph": 6.3
+  },
+  {
+    "deviceId": "GH005",
+    "timestamp": "2025-09-13T10:00:00.000Z",
+    "nitrogen": 162.4,
+    "phosphorus": 43.6,
+    "ph": 6.5
+  },
+  {
+    "deviceId": "GH005",
+    "timestamp": "2025-09-13T12:00:00.000Z",
+    "nitrogen": 159.8,
+    "phosphorus": 42.1,
+    "ph": 6.4
+  }
+]
