@@ -39,19 +39,7 @@ const NitrogenChart = ({ readings, loading }) => {
     );
   }
 
-  // Prepare data for the chart
-  const chartData = readings
-    .map(reading => ({
-      timestamp: reading.timestamp,
-      deviceId: reading.deviceId,
-      nitrogen: reading.nitrogen,
-      time: new Date(reading.timestamp).toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit'
-      }),
-      fullTime: new Date(reading.timestamp).toLocaleString()
-    }))
-    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+  // Prepare data for the chart (removed unused variable)
 
   // Group readings by timestamp and device
   const deviceData = {};

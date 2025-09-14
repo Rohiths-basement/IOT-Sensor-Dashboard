@@ -19,7 +19,7 @@ function App() {
   const [alerts, setAlerts] = useState([]);
 
   // Fetch data from API
-  const fetchData = async () => {
+  const fetchData = React.useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -40,7 +40,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   // Check for alert conditions
   const checkForAlerts = (readings) => {
@@ -91,7 +91,7 @@ function App() {
     const interval = setInterval(fetchData, 30000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchData]);
 
   return (
     <div className="App">
