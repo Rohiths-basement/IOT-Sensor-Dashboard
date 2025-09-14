@@ -1,0 +1,68 @@
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #f1f5f9;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.status-indicator:hover {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.status-icon {
+  font-size: 0.75rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-text {
+  font-weight: 500;
+  color: #374151;
+}
+
+.status-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.status-count {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.125rem 0.375rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+.status-warning .status-count {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-error .status-count {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-online .status-count {
+  background: #d1fae5;
+  color: #065f46;
+}
