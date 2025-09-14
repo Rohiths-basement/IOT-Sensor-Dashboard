@@ -129,6 +129,25 @@ const sampleReadings = generateSampleReadings();
 console.log('Seeding database with sample data...');
 
 db.serialize(() => {
+  // Create table if it doesn't exist
+  db.run(`
+    CREATE TABLE IF NOT EXISTS readings (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      deviceId TEXT NOT NULL,
+      timestamp TEXT NOT NULL,
+      nitrogen REAL NOT NULL,
+      phosphorus REAL NOT NULL,
+      ph REAL NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `, (err) => {
+    if (err) {
+      console.error('Error creating table:', err);
+      return;
+    }
+    console.log('Table created or already exists');
+  });
+
   // Clear existing data
   db.run('DELETE FROM readings', (err) => {
     if (err) {
