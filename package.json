@@ -8,9 +8,7 @@
     "start": "cd frontend && npm start",
     "dev": "cd frontend && npm start"
   },
-  "dependencies": {
-    "better-sqlite3": "^8.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "keywords": ["agriculture", "iot", "sensors", "dashboard"],
   "author": "Rohith",
